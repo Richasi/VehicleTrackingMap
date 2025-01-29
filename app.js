@@ -21,7 +21,7 @@ const mapToken = 'pk.eyJ1IjoibGlsZXNoIiwiYSI6ImNsemp4ZTc0MzB0aDIya3IxMXF1NWJvbzg
 fetch('/data.json')
   .then(response => response.json())
   .then(data => {
-      document.getElementById('display-path').addEventListener('click', () => {
+      document.getElementById('show-path').addEventListener('click', () => {
           const selectedTrip = document.getElementById('trip-options').value;
           const trip = data.trips[selectedTrip] || data.trips["default"];
 
@@ -54,7 +54,8 @@ fetch('/data.json')
       });
   })
   .catch(error => console.error('Error loading trip data:', error));
-document.getElementById('begin-motion').addEventListener('click', () => {
+
+document.getElementById('start-vehicle').addEventListener('click', () => {
     if (pathCoordinates.length === 0) return;
 
     const moveDuration = 10000;

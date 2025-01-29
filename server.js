@@ -16,6 +16,7 @@ app.get('/data.json', (req, res) => {
     res.sendFile(path.join(__dirname, 'data.json'));
 });
 
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
