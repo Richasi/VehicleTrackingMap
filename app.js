@@ -18,7 +18,7 @@ let pathCoordinates = [];
 const mapToken = 'pk.eyJ1IjoibGlsZXNoIiwiYSI6ImNsemp4ZTc0MzB0aDIya3IxMXF1NWJvbzgifQ.E4mLxZLZCph5ohJB6rtW9w';
 
 // ✅ Load trip data from JSON
-fetch('data.json')
+fetch('/data.json')
   .then(response => response.json())
   .then(data => {
       document.getElementById('display-path').addEventListener('click', () => {
@@ -54,7 +54,6 @@ fetch('data.json')
       });
   })
   .catch(error => console.error('Error loading trip data:', error));
-
 document.getElementById('begin-motion').addEventListener('click', () => {
     if (pathCoordinates.length === 0) return;
 
